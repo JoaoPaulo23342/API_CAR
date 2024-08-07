@@ -1,24 +1,30 @@
 package com.gitHub.JoaoPaulo23342.API_CAR.Main;
 
+import com.gitHub.JoaoPaulo23342.API_CAR.Model.NameCarData;
+import com.gitHub.JoaoPaulo23342.API_CAR.Service.CarConvert;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.Server;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
     private Scanner sc = new Scanner(System.in);
     private Server server = new Server();
     private final String address = "https://parallelum.com.br/fipe/api/v1/";
+    private CarConvert  adapt  = new CarConvert();
     public void Menu() {
 
         var menu = """
-                *** OPÇÔES ***
+                ** Boas Vindas ao Sistema de Consulta de carros **
+                
+                *** ESCOLHA UMA DAS OPÇÕES ABAIXO ***
                 
                 
                 Carro
                 Moto
                 Caminhão
                 
-                Digite Uma das opções para Consultar: 
+                Digite Uma das opções: 
                 
                 """;
 
@@ -35,5 +41,10 @@ public class Main {
         }
         var json = server.obterDados(uri);
         System.out.println(json);
+        var brands = adapt.getList(json, NameCarData.class);
+        brands.stream()
+                .sorted(Comparator.comparing(NameCarData::codigoDoCarro))
+                .forEach(System.out::println);
+
     }
 }
