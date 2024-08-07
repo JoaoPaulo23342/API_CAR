@@ -1,5 +1,6 @@
 package com.gitHub.JoaoPaulo23342.API_CAR.Main;
 
+import com.gitHub.JoaoPaulo23342.API_CAR.Model.Models;
 import com.gitHub.JoaoPaulo23342.API_CAR.Model.NameCarData;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.CarConvert;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.Server;
@@ -45,6 +46,19 @@ public class Main {
         brands.stream()
                 .sorted(Comparator.comparing(NameCarData::codigoDoCarro))
                 .forEach(System.out::println);
+
+        System.out.println("Digite o Codigo da Marca que vc deseja: ");
+        var idBrands = sc.nextLine();
+
+        uri = uri + "/" + idBrands + "/modelos";
+        json = server.obterDados(uri);
+        var modelsList = adapt.obterDados(json, Models.class);
+        System.out.println("\nResultado da busca dos modelos referente a essa marca: ");
+        modelsList.modelos().stream()
+                .sorted(Comparator.comparing(NameCarData::codigoDoCarro))
+                .forEach(System.out::println);
+
+
 
     }
 }
