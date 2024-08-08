@@ -2,13 +2,11 @@ package com.gitHub.JoaoPaulo23342.API_CAR.Main;
 
 import com.gitHub.JoaoPaulo23342.API_CAR.Model.Models;
 import com.gitHub.JoaoPaulo23342.API_CAR.Model.NameCarData;
+import com.gitHub.JoaoPaulo23342.API_CAR.Model.Vehicle;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.CarConvert;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.Server;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -74,6 +72,17 @@ public class Main {
         uri = uri + "/" + IdModel + "/ano";
         json = server.obterDados(uri);
         List<NameCarData> years = adapt.getList(json, NameCarData.class);
+
+        List<Vehicle> vehicles = new ArrayList<>();
+        for (int i = 0; i < years.size(); i++) {
+            var yearsAddress = uri + "/" + years.get(i).codigoDoCarro();
+            json = server.obterDados(yearsAddress);
+            Vehicle vehicle = adapt.obterDados(json, Vehicle.class);
+            vehicles.add(vehicle);
+        }
+
+        System.out.println("\nTodos os veiculos buscados com avaliações por ano: ");
+        vehicles.forEach(System.out::println);
 
 
 
