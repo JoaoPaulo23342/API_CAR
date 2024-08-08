@@ -24,7 +24,7 @@ Clone este repositório:
 
 bash
 Copiar código
-git clone https://github.com/seu-usuario/API_CAR.git
+git clone https://github.com/JoaoPaulo23342/API_CAR.git
 Substitua seu-usuario pelo seu nome de usuário no GitHub.
 
 Importe o projeto para o seu IDE:
