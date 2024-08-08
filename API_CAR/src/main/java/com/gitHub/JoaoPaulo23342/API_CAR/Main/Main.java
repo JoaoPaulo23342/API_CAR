@@ -5,8 +5,11 @@ import com.gitHub.JoaoPaulo23342.API_CAR.Model.NameCarData;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.CarConvert;
 import com.gitHub.JoaoPaulo23342.API_CAR.Service.Server;
 
+import java.util.Collection;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     private Scanner sc = new Scanner(System.in);
@@ -57,6 +60,23 @@ public class Main {
         modelsList.modelos().stream()
                 .sorted(Comparator.comparing(NameCarData::codigoDoCarro))
                 .forEach(System.out::println);
+        System.out.println("\nDigite o nome do carro que você deseja: ");
+        var nameCar = sc.nextLine();
+        List<NameCarData> filter = modelsList.modelos().stream()
+                .filter(m -> m.nomeDoCarro().toLowerCase().contains(nameCar.toLowerCase()))
+                .collect(Collectors.toList());
+
+        System.out.println("\nSeus modelos foram filtrados");
+        filter.forEach(System.out::println);
+
+        System.out.println("Digite por favor o ID do Modelo do carro: ");
+        var IdModel = sc.nextLine();
+        uri = uri + "/" + IdModel + "/ano";
+        json = server.obterDados(uri);
+        List<NameCarData> years = adapt.getList(json, NameCarData.class);
+
+
+
 
 
 
