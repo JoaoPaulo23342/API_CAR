@@ -15,7 +15,7 @@ Tecnologias utilizadas:
 <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white">
 <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white">
 
-<p align="center">Jackson
+<p align="center">Biblioteca Jackson
 <p align="center">API da Tabela FIPE
 
 <h1>Como executar o projeto:</h1>
