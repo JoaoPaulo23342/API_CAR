@@ -9,9 +9,7 @@ public record Vehicle(
         @JsonAlias("Marca") String marcaDoVeiculo,
         @JsonAlias("Modelo") String modeloDoVeiculo,
         @JsonAlias("AnoModelo") Integer anoDoVeiculo,
-        @JsonAlias("Combustivel") String combustivel,
-        @JsonAlias("CodigoFipe") String idDaFipe,
-        @JsonAlias("MesReferencia") String mesReferencia,
-        @JsonAlias("SiglaCombustivel") String siglaDoCombustivel
+        @JsonAlias("Combustivel") String combustivel
+
 ) {
 }
