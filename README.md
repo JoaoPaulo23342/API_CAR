@@ -38,8 +38,8 @@ Verifique se o JDK está configurado: O projeto requer o Java Development Kit (J
 Verifique se o Maven está configurado: O projeto usa o Maven para gerenciar as dependências. Certifique-se de que o Maven esteja instalado e configurado no seu IDE.
 Execute a classe Principal.java:
 
-Abra a classe Principal.java no seu IDE.
-Clique com o botão direito do mouse na classe e selecione "Run" > "Run 'Principal'".
+Abra a classe Main.java no seu IDE.
+Clique com o botão direito do mouse na classe e selecione "Run" > "Run 'Main'".
 Interaja com a aplicação:
 
 A aplicação irá exibir um menu com as opções "Carro", "Moto" e "Caminhão".
