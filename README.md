@@ -9,9 +9,12 @@ Busca por marca: O usuário pode escolher entre carro, moto ou caminhão e infor
 Busca por modelo: O usuário pode digitar parte do nome do modelo desejado e a aplicação filtra os resultados.
 Busca por ano: A aplicação exibe todos os anos disponíveis para o modelo escolhido.
 Exibição de informações: A aplicação exibe as informações detalhadas do veículo, incluindo o valor, marca, modelo, ano e tipo de combustível.
-Tecnologias utilizadas:
 
-<p align="center">
+
+<h2>Tecnologias utilizadas:</h2>
+
+
+<p align="center" border-top="20px">
 <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white">
 <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white">
 
