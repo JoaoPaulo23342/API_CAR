@@ -69,7 +69,7 @@ public class Main {
 
         System.out.println("Digite por favor o ID do Modelo do carro: ");
         var IdModel = sc.nextLine();
-        uri = uri + "/" + IdModel + "/ano";
+        uri = uri + "/" + IdModel + "/anos";
         json = server.obterDados(uri);
         List<NameCarData> years = adapt.getList(json, NameCarData.class);
 
